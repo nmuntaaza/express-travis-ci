@@ -1,0 +1,21 @@
+{
+  "name": "express-travis-ci",
+  "version": "1.0.0",
+  "description": "Continuous Integration using Travis CI",
+  "main": "index.js",
+  "repository": "https://github.com/nmuntaaza/express-travis-ci.git",
+  "author": "Naufal Muntaaza",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.0",
+    "supertest": "^4.0.2"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  }
+}
