@@ -15,7 +15,7 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --exit",
     "start": "node index.js"
   }
 }
