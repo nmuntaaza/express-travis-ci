@@ -19,5 +19,8 @@ jobs:
       - run:
           name: Unit Testing
           command: yarn test
+      - run:
+          name: Create Test Result Folder
+          command: mkdir -p test-results/mocha
       - store_test_results:
           path: test-results
