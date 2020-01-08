@@ -2,7 +2,20 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:4.8.2
+      - image: circleci/node:8.12.0
     steps:
       - checkout
-      - run: echo "Hello world"
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependecies
+          command: yarn install --forzen-lockfile
+      - save_cache:
+          name: Save Yarn Package
+          paths:
+            - ~/.cache/yarn
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Unit Testing
+          command: yarn test
